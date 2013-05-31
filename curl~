@@ -1,0 +1,7 @@
+Return all
+curl -H "Accept: application/json" -H "Content-type: application/json" http://localhost:3000/api/wineries/all
+
+Create new
+curl -d '{ "winery": { "country": "Italy", "tasting_room": "true", "varieties_attributes": [{ "name": "Red Wine" }] } }' 'http://localhost:3000/api/wineries' -H Content-Type:application/json
+
+

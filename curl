@@ -1,0 +1,14 @@
+Return all
+curl -H "Accept: application/json" -H "Content-type: application/json" http://localhost:3000/api/wineries/all
+
+Create new
+curl -d '{ "winery": { "country": "Italy", "tasting_room": "true", "varieties_attributes": [{ "name": "Red Wine" }] } }' 'http://localhost:3000/api/wineries' -H Content-Type:application/json
+
+Return by id
+curl -H "Accept: application/json" -H "Content-type: application/json" http://localhost:3000/api/wineries/12
+
+Update
+curl -X PUT -d '{ "winery": { "country": "USA" } }' 'http://localhost:3000/api/wineries/12' -H Content-Type:application/json
+
+Delete
+curl -X DELETE 'http://localhost:3000/api/wineries/12' -H Content-Type:application/json
