@@ -15,3 +15,8 @@ end
 gem 'jquery-rails'
 gem 'grape'
 gem 'pry-rails'
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl'
+end

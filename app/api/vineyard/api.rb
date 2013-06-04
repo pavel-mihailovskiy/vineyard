@@ -12,7 +12,7 @@ module Vineyard
 
     resource :wineries do
       desc "Return all wineries."
-      get :all do
+      get do
         Winery.all
       end
 
@@ -29,7 +29,12 @@ module Vineyard
         requires :winery, type: Hash, desc: "Winery params."
       end
       post do
-        Winery.create(params[:winery])
+        winery = Winery.new(params[:winery])
+        if winery.save
+          { status: 'Successfully created' }
+        else
+          { errors: winery.errors }
+        end
       end
 
       desc "Update a winery."
